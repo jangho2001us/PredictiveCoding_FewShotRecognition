@@ -1,4 +1,4 @@
-# Prototypical Networks for Few shot Learning in PyTorch
+# Predictive Coding based Prototypical Networks for Few shot Learning in PyTorch
 
 Predictive coding networks ([paper](https://arxiv.org/abs/2106.13082), [code](https://github.com/RobertRosenbaum/Torch2PC)) based implementation of Prototypical Networks for Few Shot Learning ([paper](https://arxiv.org/abs/1703.05175), [code](https://github.com/orobix/Prototypical-Networks-for-Few-shot-Learning-PyTorch)) in PyTorch. 
 
