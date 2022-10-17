@@ -44,7 +44,9 @@ To train the Protonet on this task, cd into this repo's `src` root folder and ex
 
 The script takes the following command line options:
 
-- `dataset_root`: the root directory where tha dataset is stored, default to `'../dataset'`
+- `dataset_root`: the root directory where the dataset is stored, default to `'./data'`
+
+- `experiment_root`: the root directory where the experimental results are stored, default to `'./exp_few'`
 
 - `nepochs`: number of epochs to train for, default to `100`
 
