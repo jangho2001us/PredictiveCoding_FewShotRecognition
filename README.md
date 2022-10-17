@@ -1,5 +1,10 @@
 # Prototypical Networks for Few shot Learning in PyTorch
-Simple alternative Implementation of Prototypical Networks for Few Shot Learning ([paper](https://arxiv.org/abs/1703.05175), [code](https://github.com/jakesnell/prototypical-networks)) in PyTorch.
+
+Predictive coding networks ([paper](https://arxiv.org/abs/2106.13082), [code](https://github.com/RobertRosenbaum/Torch2PC)) based implementation of Prototypical Networks for Few Shot Learning ([paper](https://arxiv.org/abs/1703.05175), [code](https://github.com/jakesnell/prototypical-networks)) in PyTorch. 
+   
+## Predictive Coding Algorithm
+
+Inspired by the human brain, a predictive coding algorithm was introduced to resolve the biological limitation of backpropagation. Contrary to the neural plasticity of the human brain, the backpropagation algorithm performs global error-guided learning. However, in predictive coding, it performs local learning because its learning is performed with local error nodes in addition to the global error node. It has been demonstrated that an arbitrary computational graph can be trained in a predictive coding manner.
 
 ## Prototypical Networks
 
@@ -28,7 +33,7 @@ In [`prototypical_loss.py`](src/prototypical_loss.py) both loss function and los
 
 The function takes in input the batch input from the model, samples' ground truths and the number `n_suppport` of samples to be used as support samples. Episode classes get infered from the target list, `n_support` samples get randomly extracted for each class, their class barycentres get computed, as well as the distances of each remaining samples' embedding from each class barycentre and the probability of each sample of belonging to each episode class get finmally computed; then the loss is then computed from the wrong predictions probabilities (for the query samples) as usual in classification problems.
 
-## Training
+## Training with Backpropagation
 
 Please note that the training code is here just for demonstration purposes. 
 
@@ -71,23 +76,43 @@ Running the command without arguments will train the models with the default hyp
 
 
 
+## Training with Predictive Coding
+
+Please note that the training code is here just for demonstration purposes. 
+
+To train the predictive coding version of Protonet on this task with predictive coding manner, cd into this repo's `src` root folder and execute:
+
+    $ python train_pc.py --error_type FixedPred --eta 0.1 --num_iter 20
+
+- `error_type`: parameter update protocol of predictive coding algorithm, default to `FixedPred`
+
+- `eta`: weight learning rate of predictive coding algorithm, default to `0.1`
+
+- `num_iter`: the repetition number of backward iteration , default to `20`
+
+The properties of other parameters are the same as backpropagation-based learning.
+
+
 ## .bib citation
 cite the paper as follows (copied-pasted it from arxiv for you):
-
-    @article{DBLP:journals/corr/SnellSZ17,
-      author    = {Jake Snell and
-                   Kevin Swersky and
-                   Richard S. Zemel},
-      title     = {Prototypical Networks for Few-shot Learning},
-      journal   = {CoRR},
-      volume    = {abs/1703.05175},
-      year      = {2017},
-      url       = {http://arxiv.org/abs/1703.05175},
-      archivePrefix = {arXiv},
-      eprint    = {1703.05175},
-      timestamp = {Wed, 07 Jun 2017 14:41:38 +0200},
-      biburl    = {http://dblp.org/rec/bib/journals/corr/SnellSZ17},
-      bibsource = {dblp computer science bibliography, http://dblp.org}
+    
+    @article{snell2017prototypical,
+      title={Prototypical networks for few-shot learning},
+      author={Snell, Jake and Swersky, Kevin and Zemel, Richard},
+      journal={Advances in neural information processing systems},
+      volume={30},
+      year={2017}
+    }
+    
+    @article{rosenbaum2022relationship,
+      title={On the relationship between predictive coding and backpropagation},
+      author={Rosenbaum, Robert},
+      journal={Plos one},
+      volume={17},
+      number={3},
+      pages={e0266102},
+      year={2022},
+      publisher={Public Library of Science San Francisco, CA USA}
     }
 
 
