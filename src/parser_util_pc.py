@@ -13,7 +13,7 @@ def get_parser():
     parser.add_argument('-exp', '--experiment_root',
                         type=str,
                         help='root where to store models, losses and accuracies',
-                        default='./exp_few')
+                        default='./exp_few_pc')
 
     parser.add_argument('--output',
                         type=str,
@@ -82,5 +82,17 @@ def get_parser():
     parser.add_argument('--cuda',
                         action='store_true',
                         help='enables cuda')
+
+    parser.add_argument('--error_type',
+                        type=str,
+                        default='FixedPred')
+
+    parser.add_argument('--eta',
+                        type=float,
+                        default=0.1)
+
+    parser.add_argument('--num_iter',
+                        type=int,
+                        default=20)
 
     return parser
