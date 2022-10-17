@@ -1,7 +1,7 @@
 # Prototypical Networks for Few shot Learning in PyTorch
 
-Predictive coding networks ([paper](https://arxiv.org/abs/2106.13082), [code](https://github.com/RobertRosenbaum/Torch2PC)) based implementation of Prototypical Networks for Few Shot Learning ([paper](https://arxiv.org/abs/1703.05175), [code](https://github.com/jakesnell/prototypical-networks)) in PyTorch. 
-   
+Predictive coding networks ([paper](https://arxiv.org/abs/2106.13082), [code](https://github.com/RobertRosenbaum/Torch2PC)) based implementation of Prototypical Networks for Few Shot Learning ([paper](https://arxiv.org/abs/1703.05175), [code](https://github.com/orobix/Prototypical-Networks-for-Few-shot-Learning-PyTorch)) in PyTorch. 
+
 ## Predictive Coding Algorithm
 
 Inspired by the human brain, a predictive coding algorithm was introduced to resolve the biological limitation of backpropagation. Contrary to the neural plasticity of the human brain, the backpropagation algorithm performs global error-guided learning. However, in predictive coding, it performs local learning because its learning is performed with local error nodes in addition to the global error node. It has been demonstrated that an arbitrary computational graph can be trained in a predictive coding manner.
