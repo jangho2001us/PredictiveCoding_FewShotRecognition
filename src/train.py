@@ -257,22 +257,6 @@ def main():
          test_dataloader=test_dataloader,
          model=model)
 
-    # optim = init_optim(options, model)
-    # lr_scheduler = init_lr_scheduler(options, optim)
-
-    # print('Training on train+val set..')
-    # train(opt=options,
-    #       tr_dataloader=trainval_dataloader,
-    #       val_dataloader=None,
-    #       model=model,
-    #       optim=optim,
-    #       lr_scheduler=lr_scheduler)
-
-    # print('Testing final model..')
-    # test(opt=options,
-    #      test_dataloader=test_dataloader,
-    #      model=model)
-
 
 if __name__ == '__main__':
     main()
